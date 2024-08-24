@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7813D72A2C7A8EB3003171B4 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 7813D7292C7A8EB3003171B4 /* RealityKitContent */; };
+		7813D73F2C7A8F4D003171B4 /* Godot_Project in Resources */ = {isa = PBXBuildFile; fileRef = 7813D73E2C7A8F4D003171B4 /* Godot_Project */; };
+		7813D7582C7A90EE003171B4 /* GodotVision in Frameworks */ = {isa = PBXBuildFile; productRef = 7813D7572C7A90EE003171B4 /* GodotVision */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7813D7242C7A8EB3003171B4 /* Hello-Godot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello-Godot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7813D7282C7A8EB3003171B4 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		7813D73E2C7A8F4D003171B4 /* Godot_Project */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Godot_Project; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -41,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7813D7582C7A90EE003171B4 /* GodotVision in Frameworks */,
 				7813D72A2C7A8EB3003171B4 /* RealityKitContent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +55,7 @@
 		7813D71B2C7A8EB3003171B4 = {
 			isa = PBXGroup;
 			children = (
+				7813D73E2C7A8F4D003171B4 /* Godot_Project */,
 				7813D7262C7A8EB3003171B4 /* Hello-Godot */,
 				7813D7272C7A8EB3003171B4 /* Packages */,
 				7813D7252C7A8EB3003171B4 /* Products */,
@@ -83,10 +88,12 @@
 				7813D7202C7A8EB3003171B4 /* Sources */,
 				7813D7212C7A8EB3003171B4 /* Frameworks */,
 				7813D7222C7A8EB3003171B4 /* Resources */,
+				7813D7592C7A9527003171B4 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7813D7712C7A98BF003171B4 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				7813D7262C7A8EB3003171B4 /* Hello-Godot */,
@@ -94,6 +101,7 @@
 			name = "Hello-Godot";
 			packageProductDependencies = (
 				7813D7292C7A8EB3003171B4 /* RealityKitContent */,
+				7813D7572C7A90EE003171B4 /* GodotVision */,
 			);
 			productName = "Hello-Godot";
 			productReference = 7813D7242C7A8EB3003171B4 /* Hello-Godot.app */;
@@ -123,6 +131,9 @@
 			);
 			mainGroup = 7813D71B2C7A8EB3003171B4;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7813D7562C7A90EE003171B4 /* XCRemoteSwiftPackageReference "GodotVision" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7813D7252C7A8EB3003171B4 /* Products */;
 			projectDirPath = "";
@@ -138,10 +149,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7813D73F2C7A8F4D003171B4 /* Godot_Project in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7813D7592C7A9527003171B4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${CODESIGNING_FOLDER_PATH}/Godot_Project/addons/godot-jolt/visionos/godot-jolt_visionos.framework",
+				"${CODESIGNING_FOLDER_PATH}/Godot_Project/addons/godot-jolt/visionos/godot-jolt_visionos_simulator.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#\n# Sign dynamically loaded Godot gdextension .frameworks\n#\nfor i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_COUNT - 1)); do\n    inputFileVar=\"SCRIPT_INPUT_FILE_${i}\"\n    inputFile=\"${!inputFileVar}\"\n    codesign --verbose --force --sign \"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\" \"$inputFile\"\ndone\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7813D7202C7A8EB3003171B4 /* Sources */ = {
@@ -152,6 +187,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7813D7712C7A98BF003171B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 7813D7702C7A98BF003171B4 /* GodotVision */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7813D7372C7A8EB4003171B4 /* Debug */ = {
@@ -348,10 +390,31 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		7813D7562C7A90EE003171B4 /* XCRemoteSwiftPackageReference "GodotVision" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kevinw/GodotVision.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		7813D7292C7A8EB3003171B4 /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;
+		};
+		7813D7572C7A90EE003171B4 /* GodotVision */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7813D7562C7A90EE003171B4 /* XCRemoteSwiftPackageReference "GodotVision" */;
+			productName = GodotVision;
+		};
+		7813D7702C7A98BF003171B4 /* GodotVision */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7813D7562C7A90EE003171B4 /* XCRemoteSwiftPackageReference "GodotVision" */;
+			productName = GodotVision;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
