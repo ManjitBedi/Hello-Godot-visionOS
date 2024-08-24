@@ -1,4 +1,4 @@
-This is work in progress - my goal was to make a new project & manually add the Godot-vision support to it.  It is based on this starter repo: [Godot Vision Starter](https://github.com/kevinw/GodotVisionExample).
+This is work in progress - my goal was to make a new project & manually add the Godot-vision support to it. It is based on this starter repo: [Godot Vision Starter](https://github.com/kevinw/GodotVisionExample).
 
 More info on Godot Vision here [godot.vision](https://godot.vision).  AFAIK, Godot for visionOS works only with Godot version 4.2.
 
@@ -6,6 +6,8 @@ More info on Godot Vision here [godot.vision](https://godot.vision).  AFAIK, God
 ## Configuration
 
 The following flag in the build setting needs to be specified:
+
+User script sandboxing: No
 
 C++ and Objective-C Interoperability: C++/Objective-C (raw value objcxx)
 
