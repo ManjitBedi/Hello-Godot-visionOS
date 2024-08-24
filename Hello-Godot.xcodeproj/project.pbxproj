@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7813D72A2C7A8EB3003171B4 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 7813D7292C7A8EB3003171B4 /* RealityKitContent */; };
 		7813D73F2C7A8F4D003171B4 /* Godot_Project in Resources */ = {isa = PBXBuildFile; fileRef = 7813D73E2C7A8F4D003171B4 /* Godot_Project */; };
 		7813D7582C7A90EE003171B4 /* GodotVision in Frameworks */ = {isa = PBXBuildFile; productRef = 7813D7572C7A90EE003171B4 /* GodotVision */; };
+		78544C4F2C7AA45300A01692 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 78544C4E2C7AA45300A01692 /* RealityKitContent */; };
+		78544C5C2C7AA5FA00A01692 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 7813D7292C7A8EB3003171B4 /* RealityKitContent */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7813D7242C7A8EB3003171B4 /* Hello-Godot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hello-Godot.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7813D7282C7A8EB3003171B4 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		7813D73E2C7A8F4D003171B4 /* Godot_Project */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Godot_Project; sourceTree = "<group>"; };
+		78544C682C7AA63700A01692 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -44,8 +45,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78544C5C2C7AA5FA00A01692 /* RealityKitContent in Frameworks */,
+				78544C4F2C7AA45300A01692 /* RealityKitContent in Frameworks */,
 				7813D7582C7A90EE003171B4 /* GodotVision in Frameworks */,
-				7813D72A2C7A8EB3003171B4 /* RealityKitContent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,9 +57,9 @@
 		7813D71B2C7A8EB3003171B4 = {
 			isa = PBXGroup;
 			children = (
+				78544C682C7AA63700A01692 /* README.md */,
 				7813D73E2C7A8F4D003171B4 /* Godot_Project */,
 				7813D7262C7A8EB3003171B4 /* Hello-Godot */,
-				7813D7272C7A8EB3003171B4 /* Packages */,
 				7813D7252C7A8EB3003171B4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,14 +70,6 @@
 				7813D7242C7A8EB3003171B4 /* Hello-Godot.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		7813D7272C7A8EB3003171B4 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				7813D7282C7A8EB3003171B4 /* RealityKitContent */,
-			);
-			path = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,6 +96,7 @@
 			packageProductDependencies = (
 				7813D7292C7A8EB3003171B4 /* RealityKitContent */,
 				7813D7572C7A90EE003171B4 /* GodotVision */,
+				78544C4E2C7AA45300A01692 /* RealityKitContent */,
 			);
 			productName = "Hello-Godot";
 			productReference = 7813D7242C7A8EB3003171B4 /* Hello-Godot.app */;
@@ -133,6 +128,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				7813D7562C7A90EE003171B4 /* XCRemoteSwiftPackageReference "GodotVision" */,
+				78544C4D2C7AA45300A01692 /* XCLocalSwiftPackageReference "Packages/RealityKitContent" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7813D7252C7A8EB3003171B4 /* Products */;
@@ -217,8 +213,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -243,8 +241,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 7;
+				XROS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -307,7 +307,7 @@
 				SDKROOT = xros;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				XROS_DEPLOYMENT_TARGET = 2.0;
+				XROS_DEPLOYMENT_TARGET = 1.3;
 			};
 			name = Debug;
 		};
@@ -360,10 +360,11 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = xros;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
-				XROS_DEPLOYMENT_TARGET = 2.0;
+				XROS_DEPLOYMENT_TARGET = 1.3;
 			};
 			name = Release;
 		};
@@ -390,6 +391,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		78544C4D2C7AA45300A01692 /* XCLocalSwiftPackageReference "Packages/RealityKitContent" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/RealityKitContent;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		7813D7562C7A90EE003171B4 /* XCRemoteSwiftPackageReference "GodotVision" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -415,6 +423,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7813D7562C7A90EE003171B4 /* XCRemoteSwiftPackageReference "GodotVision" */;
 			productName = GodotVision;
+		};
+		78544C4E2C7AA45300A01692 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

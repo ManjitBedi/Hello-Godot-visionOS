@@ -2,5 +2,31 @@ This is work in progress - my goal was to make a new project & manually add the 
 
 More info on Godot Vision here [godot.vision](https://godot.vision).  AFAIK, Godot for visionOS works only with Godot version 4.2.
 
-It is not compiling at the moment. Ugh.
+
+## Configuration
+
+The following flag in the build setting needs to be specified:
+
+C++ and Objective-C Interoperability: C++/Objective-C (raw value objcxx)
+
+## Custom build phase
+
+```
+#
+# Sign dynamically loaded Godot gdextension .frameworks
+#
+for i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_COUNT - 1)); do
+    inputFileVar="SCRIPT_INPUT_FILE_${i}"
+    inputFile="${!inputFileVar}"
+    codesign --verbose --force --sign "${EXPANDED_CODE_SIGN_IDENTITY_NAME}" "$inputFile"
+done
+
+```
+
+With the input file arguments:
+
+```
+${CODESIGNING_FOLDER_PATH}/Godot_Project/addons/godot-jolt/visionos/godot-jolt_visionos.framework
+${CODESIGNING_FOLDER_PATH}/Godot_Project/addons/godot-jolt/visionos/godot-jolt_visionos_simulator.framework
+```
 
