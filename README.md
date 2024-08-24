@@ -5,7 +5,7 @@ More info on Godot Vision here [godot.vision](https://godot.vision).  AFAIK, God
 
 ## Configuration
 
-The following flag in the build setting needs to be specified:
+The following flags needs to be specified in the build setting:
 
 User script sandboxing: No
 
