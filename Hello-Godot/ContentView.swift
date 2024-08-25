@@ -10,7 +10,7 @@ import RealityKit
 import RealityKitContent
 
 struct ContentView: View {
-
+    @Environment(\.openWindow) private var openWindow
     @State var enlarge = false
 
     var body: some View {
@@ -31,14 +31,26 @@ struct ContentView: View {
                 enlarge.toggle()
             })
 
-            VStack {
-                Button {
-                    enlarge.toggle()
-                } label: {
-                    Text(enlarge ? "Reduce RealityView Content" : "Enlarge RealityView Content")
-                }
-                .animation(.none, value: 0)
-                .fontWeight(.semibold)
+            VStack() {
+                HStack() {
+                    Button {
+                        enlarge.toggle()
+                    } label: {
+                        Text(enlarge ? "Reduce RealityView Content" : "Enlarge RealityView Content")
+                    }
+                    .animation(.none, value: 0)
+                    .fontWeight(.semibold)
+
+                    Spacer()
+
+                    Button(action: {
+                        openWindow(id: "Godot")
+                    }) {
+                        Image(systemName: "gamecontroller")
+                            .font(.title)
+                    }
+                    .fontWeight(.semibold)
+                }.frame(width: 400)
             }
             .padding()
             .glassBackgroundEffect()
