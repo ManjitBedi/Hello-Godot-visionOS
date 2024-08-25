@@ -5,7 +5,7 @@ More info on Godot Vision here [godot.vision](https://godot.vision).  AFAIK, God
 
 Initially, the app display a volume with 2 buttons - the joystick icon button opens a window using a Godot view.
 
-Note: there is an issue with the Godot window volume; you need to resize it to get the Godot to render properly. 
+Note: there is an issue with the Godot window volume; you need to resize it to get the Godot to reeize & render properly. 
 
 ## Configuration
 
