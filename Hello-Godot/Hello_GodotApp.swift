@@ -15,8 +15,6 @@ let VOLUME_SIZE = simd_double3(1.8, 1.0, 1.5)
 
 @main
 struct Hello_GodotApp: App {
-    @Environment(\.openWindow) private var openWindow
-
     var body: some Scene {
         WindowGroup("Menu", id: "Menu") {
             ContentView()
