@@ -38,6 +38,7 @@ struct ContentView: View {
                         enlarge.toggle()
                     } label: {
                         Text(enlarge ? "Reduce RealityView Content" : "Embigify RealityView Content")
+                            .multilineTextAlignment(.center)
                     }
                     .animation(.none, value: 0)
                     .fontWeight(.semibold)

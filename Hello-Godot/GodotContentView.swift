@@ -18,9 +18,13 @@ struct GodotContentView: View {
 
                 let pathToGodotProject = "Godot_Project" // The path to the folder containing the "project.godot" you wish Godot to load.
 
+                // hack: for visionOS 2 & spawning a volume adjacent to another volume
+                let frame = content.convert(geometry.frame(in: .local), from: .local, to: .scene)
+                let volumeSize = simd_double3(frame.max - frame.min)
+
                 // Initialize Godot
                 let rkEntityGodotRoot = godotVision.setupRealityKitScene(content,
-                                                                         volumeSize: VOLUME_SIZE,
+                                                                         volumeSize: volumeSize,
                                                                          projectFileDir: pathToGodotProject)
 
                 print("Godot scene root: \(rkEntityGodotRoot)")
