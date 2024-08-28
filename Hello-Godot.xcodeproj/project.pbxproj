@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		7813D73F2C7A8F4D003171B4 /* Godot_Project in Resources */ = {isa = PBXBuildFile; fileRef = 7813D73E2C7A8F4D003171B4 /* Godot_Project */; };
 		7813D7582C7A90EE003171B4 /* GodotVision in Frameworks */ = {isa = PBXBuildFile; productRef = 7813D7572C7A90EE003171B4 /* GodotVision */; };
-		78544C4F2C7AA45300A01692 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 78544C4E2C7AA45300A01692 /* RealityKitContent */; };
-		78544C5C2C7AA5FA00A01692 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 7813D7292C7A8EB3003171B4 /* RealityKitContent */; };
+		78A000162C7F000400C20453 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 7813D7292C7A8EB3003171B4 /* RealityKitContent */; };
+		78A000172C7F000400C20453 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 78544C4E2C7AA45300A01692 /* RealityKitContent */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78544C5C2C7AA5FA00A01692 /* RealityKitContent in Frameworks */,
-				78544C4F2C7AA45300A01692 /* RealityKitContent in Frameworks */,
+				78A000172C7F000400C20453 /* RealityKitContent in Frameworks */,
+				78A000162C7F000400C20453 /* RealityKitContent in Frameworks */,
 				7813D7582C7A90EE003171B4 /* GodotVision in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,7 +128,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				7813D7562C7A90EE003171B4 /* XCRemoteSwiftPackageReference "GodotVision" */,
-				78544C4D2C7AA45300A01692 /* XCLocalSwiftPackageReference "Packages/RealityKitContent" */,
+				788335DB2C7EFE87002849D2 /* XCLocalSwiftPackageReference "Packages/RealityKitContent" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7813D7252C7A8EB3003171B4 /* Products */;
@@ -155,7 +155,7 @@
 		7813D7592C7A9527003171B4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -168,7 +168,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "#\n# Sign dynamically loaded Godot gdextension .frameworks\n#\nfor i in $(seq 0 $(expr $SCRIPT_INPUT_FILE_COUNT - 1)); do\n    inputFileVar=\"SCRIPT_INPUT_FILE_${i}\"\n    inputFile=\"${!inputFileVar}\"\n    codesign --verbose --force --sign \"${EXPANDED_CODE_SIGN_IDENTITY_NAME}\" \"$inputFile\"\ndone\n";
 		};
@@ -197,6 +197,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hello-Godot/Preview Content\"";
@@ -211,6 +212,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.noorg.Hello-Godot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_INTEROP_MODE = objcxx;
@@ -225,6 +227,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Hello-Godot/Preview Content\"";
@@ -239,6 +242,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.noorg.Hello-Godot";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_INTEROP_MODE = objcxx;
@@ -392,7 +396,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		78544C4D2C7AA45300A01692 /* XCLocalSwiftPackageReference "Packages/RealityKitContent" */ = {
+		788335DB2C7EFE87002849D2 /* XCLocalSwiftPackageReference "Packages/RealityKitContent" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/RealityKitContent;
 		};
