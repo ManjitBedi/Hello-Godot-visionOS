@@ -32,11 +32,12 @@ struct ContentView: View {
             })
 
             VStack() {
+                Text("Godot Vision Playground")
                 HStack() {
                     Button {
                         enlarge.toggle()
                     } label: {
-                        Text(enlarge ? "Reduce RealityView Content" : "Enlarge RealityView Content")
+                        Text(enlarge ? "Reduce RealityView Content" : "Embigify RealityView Content")
                     }
                     .animation(.none, value: 0)
                     .fontWeight(.semibold)
@@ -46,6 +47,7 @@ struct ContentView: View {
                     Button(action: {
                         openWindow(id: "Godot")
                     }) {
+                        Text("Godot")
                         Image(systemName: "gamecontroller")
                             .font(.title)
                     }
