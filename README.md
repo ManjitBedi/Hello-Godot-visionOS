@@ -3,9 +3,8 @@ This is work in progress - my goal was to make a new project & manually add the 
 More info on Godot Vision here [godot.vision](https://godot.vision).  AFAIK, Godot for visionOS works only with Godot version 4.2.
 
 
-Initially, the app display a volume with 2 buttons - the joystick icon button opens a window using a Godot view.
+Initially, the app displays a view in a volume with 2 buttons - the right might button opens a volume displaying the content.
 
-Note: there is an issue with the Godot content when spawning a volume - the content is too large for the volume; the volume size is hacked for now & needs more work.
 
 ## Configuration
 

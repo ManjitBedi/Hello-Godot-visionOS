@@ -10,9 +10,7 @@ import SwiftUI
 // visionOS will silently clamp to volume size if set above or below limits
 // max for all dimensions is 1.98
 // min for all dimensions is 0.24
-let VOLUME_SIZE = simd_double3(0.3, 0.4, 0.4)
-
-let defaultSize = Size3D(width: 0.6, height: 0.6, depth: 0.4)
+let defaultSize = Size3D(width: 1.4, height: 1.0, depth: 0.6)
 
 @main
 struct Hello_GodotApp: App {
@@ -23,6 +21,7 @@ struct Hello_GodotApp: App {
         .defaultSize(defaultSize, in: .meters)
         .windowStyle(.volumetric)
 
+        // The Godot volume gets placed adjacent to the existing volume for the Menu window group.
         WindowGroup("Godot", id: "Godot") {
             GodotContentView()
         }

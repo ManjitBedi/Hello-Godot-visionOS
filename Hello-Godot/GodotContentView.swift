@@ -24,14 +24,14 @@ struct GodotContentView: View {
 
                 // Initialize Godot
                 let rkEntityGodotRoot = godotVision.setupRealityKitScene(content,
-                                                                         volumeSize: volumeSize,
-                                                                         projectFileDir: pathToGodotProject)
+                     volumeSize: volumeSize,
+                     projectFileDir: pathToGodotProject)
 
                 print("Godot scene root: \(rkEntityGodotRoot)")
 
                 if let uiPanel = attachments.entity(for: "ui_panel") {
                     content.add(uiPanel)
-                    uiPanel.position = .init(0, Float(VOLUME_SIZE.y / -2 + 0.1), Float(VOLUME_SIZE.z / 2 - 0.01))
+                    uiPanel.position = .init(0, Float(volumeSize.y / -2 + 0.1), Float(volumeSize.z / 2 - 0.01))
                 }
             } update: { content, attachments in
                 // update called when SwiftUI @State in this ContentView changes. See docs for RealityView.
